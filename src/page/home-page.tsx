@@ -1,8 +1,10 @@
+import { ChangeEventHandler } from 'react'
 import { Header } from '../components/Header'
 import { HqContainer } from '../components/HqContainer'
+import { InitialPage } from '../components/InitialPage'
 
 interface IProps {
-    handleClick: void
+    handleClick: ChangeEventHandler<HTMLInputElement>
 }
 
 export const HomePage = ({handleClick}: IProps) => {
@@ -16,7 +18,8 @@ export const HomePage = ({handleClick}: IProps) => {
                 <Header handleClick={handleClick} />
             </header>
             <main>
-                <HqContainer/>
+                <InitialPage/>
+                {/* <HqContainer/> */}
             </main>
             <footer></footer>
         </>

@@ -1,11 +1,11 @@
 import iconSun from '../../../../public/icons/icon-sum.svg'
 import iconMoon from '../../../../public/icons/icon-moon.svg'
 import { DivContainer } from './style'
-import { useContext } from 'react'
+import { ChangeEventHandler, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 
 interface IProps {
-    handleClick: void
+    handleClick: ChangeEventHandler<HTMLInputElement>
 }
 
 

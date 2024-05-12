@@ -30,6 +30,7 @@ export const HqContainer = () => {
                         <p>Price: <span>${data && data[2].id.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</span></p>
                     </div>
                 </div>
+                <div className='boxBorder'></div>
                 <div className='box-purchase'>
                     <ButtonPurchaseOrAddToCart image={iconCard} type='button' buttonStyle='addToCart' text='Add to '/>
 

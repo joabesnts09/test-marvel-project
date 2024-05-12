@@ -1,8 +1,9 @@
+import { ChangeEventHandler } from 'react'
 import { ButtonToggleTheme } from './ButtonTheme'
 import { Container } from './style'
 
 interface IProps {
-    handleClick: void
+    handleClick: ChangeEventHandler<HTMLInputElement>
 }
 
 

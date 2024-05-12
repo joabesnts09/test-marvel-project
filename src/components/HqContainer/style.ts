@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 export const HqContainerStyled = styled.div`
     width: 15.0875rem;
-  
-    margin: 0 auto;
     cursor: pointer;
     border-radius: .25rem;
 
@@ -55,6 +53,13 @@ export const HqContainerStyled = styled.div`
    
     .box-purchase {
         display: flex;
+    }
+
+    .boxBorder {
+        margin: 1rem auto;
+        margin-bottom: .5rem;
+        width: 90%;
+        border: 1px solid  ${props => props.theme.colors.colorBorder};
     }
     
 `

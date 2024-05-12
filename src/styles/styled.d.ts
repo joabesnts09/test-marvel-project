@@ -15,6 +15,7 @@ declare module 'styled-components' {
       background: string
       backgroundCard: string
       textColor: string
+      colorBorder: string
     }
   }
 }

@@ -1,8 +1,10 @@
 import styled, {css} from 'styled-components'
+interface IButtonProps {
+    buttonStyle: string;
+  }
 
 
-
-export const ButtonStyled = styled.button`
+export const ButtonStyled = styled.button<IButtonProps>`
 
     width: 90%;
     height: 2rem;
@@ -36,7 +38,7 @@ export const ButtonStyled = styled.button`
                     width: 1.3rem;
                 }
                 &:hover {
-                    background-color: #003355;
+                    background-color: #6dc100;
                 }
             `
         }

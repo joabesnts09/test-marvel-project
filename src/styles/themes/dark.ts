@@ -12,6 +12,7 @@ export default {
         background: '#262626',
         backgroundCard: '#141414',
 
-        textColor: '#fff '
+        textColor: '#fff',
+        colorBorder: '#a0a0a0',
     }
 }
