@@ -12,7 +12,7 @@ export const Header = ({handleClick}: IProps) => {
         <>
             <>
                 <Container>
-                    <h1>HQ's da Marvel</h1>
+                    <h1>Marvel comics</h1>
                    <ButtonToggleTheme handleClick={handleClick}/>
                 </Container>
             </>
