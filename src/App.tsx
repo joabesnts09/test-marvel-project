@@ -1,10 +1,11 @@
-import { HomePage } from './page/home-page'
 import { GlobalStyle } from './styles/global-styles'
 import { ThemeProvider, DefaultTheme } from 'styled-components'
 import dark from './styles/themes/dark'
 import light from './styles/themes/light'
 import { usePersistedState } from './utils/usePersistedState'
 import { ChangeEventHandler } from 'react'
+import { RoutersMain } from './routes/RoutersMain'
+import { Header } from './components/Header'
 
 
 
@@ -22,7 +23,8 @@ function App() {
     <>
     <ThemeProvider theme={theme}>
       <GlobalStyle/>
-      <HomePage handleClick={handleClick}/>
+      <Header handleClick={handleClick} />
+      <RoutersMain />
     </ThemeProvider>
     </>
   )

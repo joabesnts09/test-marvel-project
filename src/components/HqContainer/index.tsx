@@ -1,39 +1,42 @@
-import { useEffect, useState } from 'react'
-import { api } from '../../services/api'
 import { HqContainerStyled } from './style'
 import { ButtonPurchaseOrAddToCart } from './ButtonPurchase'
 import iconCard from '../../../public/icons/icon-cart-add.svg'
-
-
-export const HqContainer = () => {
-    const [data, seData] = useState()
-    useEffect(() => {
-        const getQuadrinho = async () => {
-            const response = await api.get('')
-            seData(response.data.data.results)
-            console.log(response.data.data.results);
-        }
-        getQuadrinho()
-    }, [])
+import { MouseEventHandler } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
 
 
 
-    return (
+interface IProps {
+    image: string
+    title: string
+    price: string
+    onClick?: MouseEventHandler<HTMLButtonElement> | undefined
+}
+
+export const HqContainer = ({ image, title, price, onClick}: IProps) => {
+
+    const {items} = useSelector((state: RootState) => state.cart)
+    console.log(items);
+    
+    
+    return ( 
         <>
             <HqContainerStyled>
                 <div className='container'>
                     <div className='box-img'>
-                        <img src={`${data && data[2].images[0].path}.jpg`} alt="" />
+                        <img src={`${image}.jpg`} alt="Image Comic" />
                     </div>
                     <div className='box-description'>
-                        <h3 className='title-hq'>{data && data[2].title}</h3>
-                        <p>Price: <span>${data && data[2].id.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</span></p>
+                        <h3 className='title-hq'>{title}</h3>
+                        <p>Price: <span>${price}</span></p>
                     </div>
                 </div>
-                <div className='boxBorder'></div>
-                <div className='box-purchase'>
-                    <ButtonPurchaseOrAddToCart image={iconCard} type='button' buttonStyle='addToCart' text='Add to '/>
-
+                <div className='boxBorder'>
+                    <div className='border'></div>
+                </div>
+                <div className='boxButton'>
+                    <ButtonPurchaseOrAddToCart onClick={onClick} image={iconCard} type='button' text='Add to '/>
                 </div>
             </HqContainerStyled>
         </>

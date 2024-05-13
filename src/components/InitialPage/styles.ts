@@ -16,6 +16,7 @@ export const InitialPageStyle = styled.section`
     }
 
     .comicsContainer {
+        margin: 0 auto;
         width: 90%;
         display: flex;
         flex-direction: column;
@@ -31,7 +32,10 @@ export const InitialPageStyle = styled.section`
         }
 
         .boxCard {
+            margin: 0 auto;
             display: flex;
+            align-items: center;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 1rem;
         }

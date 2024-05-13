@@ -2,10 +2,13 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 interface ICartItem {
     id: number
-    name: string
-    qty: number
-    sum: number
-    price: number
+    title: string
+    images: {
+        path: string
+    }[]
+    qty?: number
+    sum?: number
+
 }
 
 interface ICartState {
@@ -25,12 +28,12 @@ export const cartSlice = createSlice({
             )
 
             if (isExist) {
-                isExist.sum += action.payload?.price
-                isExist.qty += 1
+                isExist.sum! += action.payload?.id
+                isExist.qty! += 1
             } else {
                 state.items.push({
                     ...action.payload,
-                    sum: action.payload?.price,
+                    sum: action.payload?.id,
                     qty: 1,
                 })
             }
